@@ -7,7 +7,7 @@ import com.citykart.user.enums.Role;
 import com.citykart.user.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.module.ResolutionException;
+import com.citykart.exceptionHandler.ResourceNotFoundException;
 import java.util.List;
 
 @RestController
@@ -32,7 +32,7 @@ public class AdminController {
 
     @PutMapping("/vendors/{id}/status")
     public String updateVendorStatus(@PathVariable Long id, @RequestParam boolean active) {
-        User v = userRepository.findById(id).orElseThrow(() -> new ResolutionException("Vendor not found"));
+        User v = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Vendor not found"));
         v.setActive(active);
         userRepository.save(v);
         return "Vendor status updated to: " + (active ? "Active" : "Inactive");

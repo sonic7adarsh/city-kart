@@ -14,8 +14,8 @@ public class BookItemDTO extends BaseDTO {
     private String userId;
     private LocalDate checkIn;
     private LocalDate checkOut;
-    private int guests;
-    private double totalPrice;
+    private Integer guests;
+    private Double totalPrice;
     private String status;
     private String guestName;
     private String guestEmail;

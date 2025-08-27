@@ -15,8 +15,8 @@ public class EntityProductDTO extends BaseDTO {
     private String type;       // ROOM, DISH, TICKET, ITEM
     private String category;
     private String description;
-    private double price;
-    private int maxGuests;
+    private Double price;
+    private Integer maxGuests;
     private boolean available;
     private List<String> images;
     private List<String> features;
